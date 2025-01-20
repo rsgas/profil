@@ -2,7 +2,7 @@
 
 export default ({ location, hrefRef }) => {
     return (
-        <div className="z-10 fixed w-screen"
+        <div className="z-20 fixed w-screen"
       style={{
         // backgroundColor: "#352F44",
         color: "#FAF0E6"
