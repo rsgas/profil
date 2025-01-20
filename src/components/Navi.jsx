@@ -13,7 +13,7 @@ export default ({ location, hrefRef }) => {
           {/* ICONS */}
         <div className="favicon flex items-center gap-2">
           <div className="w-10 h-10 p-1 bg-gray-100 rounded-md">
-            <img src="/assets/transparant.png" alt="logo" style={{
+            <img src="/profil/assets/transparant.png " alt="logo" style={{
               width: "40px"
             }}/>
           </div>

@@ -54,7 +54,7 @@ const App = () => {
     </Navi>
     {/* Main Content */}
       <div className="w-full h-screen relative overflow-hidden" id='Home' ref={(e) => (sectionRefs.current['home'] = e)} >
-      <img src="/assets/bg/items/clapperboard.png" alt="clapperboard" 
+      <img src="/profil/assets/bg/items/clapperboard.png" alt="clapperboard" 
         width={300} className="
           blur-sm
           absolute
@@ -63,7 +63,7 @@ const App = () => {
           hidden
           lg:flex
         "/>
-      <img src="/assets/bg/items/camera.png" alt="clapperboard" 
+      <img src="/profil/assets/bg/items/camera.png" alt="clapperboard" 
         width={300} className="
           blur-sm
           absolute
@@ -73,7 +73,7 @@ const App = () => {
           hidden
           lg:flex
         "/>
-      <img src="/assets/bg/items/laptop.png" alt="clapperboard" 
+      <img src="/profil/assets/bg/items/laptop.png" alt="clapperboard" 
         width={300} className="
         blur-sm
         absolute
