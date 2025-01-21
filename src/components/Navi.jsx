@@ -17,7 +17,7 @@ export default ({ location, hrefRef }) => {
               width: "40px"
             }}/>
           </div>
-          <h3 className="text-xl hidden md:flex montserrat-600 ">Broadcasting Dan Produksi Film</h3>
+          <h3 className="text-xl hidden md:flex montserrat-600 ">Broadcasting And Film Production</h3>
         </div>
         {/* NAVIGATION MENU */}
               <div className="wrap">
