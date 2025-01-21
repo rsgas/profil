@@ -5,7 +5,17 @@ import "./conf.css"
 import Navi from "./components/navi"
 
 const App = () => {
+
+  const profil = {
+    'assets': {
+      'pict' : {
+        'bts' : '/profil/assets/tmp-document/random-pict/behind-the-scene.jpg'
+      }
+    }
+  }
+
   // client listener
+
   const [userListen, setUserListen] = useState('')
   const sectionRefs = useRef({})
 
@@ -13,17 +23,19 @@ const App = () => {
   const href = () => {  
     switch (userListen) {
       case 'Home' :
-        return 'About'
-      case 'About' :
-        return 'Social'
-      case 'Social' : 
-        return 'Home'}}
+        return 'profiles-1'
+      case 'Profiles' :
+        return 'profiles-2'
+      case 'Production House' : 
+        return null
+      s}
+    }
 
   useEffect (() => {
     const handleIntersection = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setUserListen(entry.target.id)
+          setUserListen(entry.target.role)
         }})}; const observer = new IntersectionObserver (handleIntersection, {
       root: null,
       threshold: 0.5
@@ -42,7 +54,7 @@ const App = () => {
 
     </Navi>
     {/* Main Content */}
-      <div className="w-full h-screen relative overflow-hidden" id='Home' ref={(e) => (sectionRefs.current['home'] = e)} >
+      <div className="w-full h-screen relative overflow-hidden" ref={(e) => (sectionRefs.current['home'] = e)} role='Home' >
       <img src="/profil/assets/bg/items/clapperboard.png" alt="clapperboard" 
         width={300} className="
           blur-sm
@@ -97,19 +109,20 @@ const App = () => {
     {/* POST CONTENT */}
       <div 
         className="w-full h-auto py-10 lg:h-screen bg-[#2b2b2b] flex flex-row flex-wrap justify-center items-center overflow-hidden"
-        id="About"
-        ref={(e) => (sectionRefs.current['about'] = e)}
+        id="profiles-1"
+        role="Profiles"
+        ref={(e) => (sectionRefs.current['profiles-1'] = e)}
       >
         {/* paragraph */}
         <div className="wrap-paraf w-[80%]">
           <div className="title">
             <h2 className="playfair-400 text-white text-2xl ">What is broadcasting and film production?</h2>
           </div>
-          <div className="paraf">
-            <p className="text-md mt-2 text-gray-300 oswald-400">The Broadcasting and Film Production program at SMK Negeri 5 Bandung offers an in-depth curriculum and immersive practical training in the specialized fields of cinematography, professional photography, and multimedia content creation. This program is meticulously designed for students who are deeply passionate about visual storytelling and aspire to craft compelling and impactful content tailored for diverse media platforms, including film, television, online streaming, and social media</p>
+          <div className="paraf px-2">
+            <p className="text-md mt-2 text-gray-300 oswald-400">The Broadcasting and Film Production program at <a className="underline text-gray-100" target="_blank" href="https://smkn5bandung.sch.id/">SMK Negeri 5 Bandung</a> offers an in-depth curriculum and immersive practical training in the specialized fields of cinematography, professional photography, and multimedia content creation. This program is meticulously designed for students who are deeply passionate about visual storytelling and aspire to craft compelling and impactful content tailored for diverse media platforms, including film, television, online streaming, and social media</p>
           </div>
         </div>
-        <div className="h-[1px] w-[80%] bg-gray-400 my-2" ></div>
+        <div className="h-[1px] w-[80%] bg-gray-400 my-2" ></div> {/* Href */}
         <br />
         <div className="wrap-paraf-img w-[80%]">
           <div className="coll w-full flex flex-col lg:flex-row">
@@ -119,23 +132,29 @@ const App = () => {
                 Mastering the art of visual storytelling involves a comprehensive skill set, including expertise in professional video editing software to produce high-quality narratives. With a strong focus on cinematography, students learn advanced camera techniques and the use of cutting-edge equipment to capture stunning visuals. 
                 This holistic approach encompasses the entire production cycle, from pre-production planning and scriptwriting to meticulous post-production editing and publishing.
               </p>
-              <p className="text-md mt-2 p-2 text-gray-300 oswald-400">The journey extends to hands-on experience in creating diverse film projects such as short films, documentaries, and other visual media, covering every step from concept development to final production. Additionally, proficiency in studio photography is developed, focusing on the use of lighting and cameras to achieve professional-grade results.</p>
+              <br />
+              <h3 className="playfair-400 text-md text-white">The Skills We Possess</h3>
+              <ol className="text-md mt-2 px-7 list-decimal text-gray-300 oswald-400">
+                <li>Video Editing: Mastering professional software to produce high-quality visual stories.</li>
+                <li>Cinematography: Capturing stunning visuals using advanced camera techniques and equipment.</li>
+                <li>Film Projects: Creating short films, documentaries, and other video projects from concept to completion.</li>
+                <li>Studio Photography: Learning to use studio lighting and cameras to capture professional-grade photographs.</li>
+                <li>Pre- and Post-Production: Managing all stages of production, from planning and scriptwriting to editing and publishing.</li>
+              </ol>
             </div>
              <div className="w-full flex justify-center">
-              <img src="https://placehold.co/1920x1080" className="my-10 w-[500px]" alt="err" />
+              <img src={profil.assets.pict.bts} className="my-10 w-[500px]" alt="err" />
              </div>
           </div>
         </div>
+        <div className="h-[1px] w-[80%] mt-5 bg-gray-400 my-2" ></div> {/* Href */}
       </div>
     {/* Aditional CONTENT */}
       <div 
         className="w-full h-screen flex justify-center align-center"
-        id="Social"
-        ref={(e) => (sectionRefs.current["social"] = e)}
-        style={{
-        }} 
-      >
-        
+        id="profiles-2"
+        role="Production House"
+        ref={(e) => (sectionRefs.current["social"] = e)}>
       </div>
     </div>
     </>

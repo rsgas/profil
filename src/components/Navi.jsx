@@ -1,6 +1,7 @@
 
 
 export default ({ location, hrefRef }) => {
+    let refs = hrefRef()
     return (
         <div className="z-20 fixed w-screen"
       style={{
@@ -21,7 +22,7 @@ export default ({ location, hrefRef }) => {
         </div>
         {/* NAVIGATION MENU */}
               <div className="wrap">
-                <a href={ `#${hrefRef()}` } className="
+                <a href={ `#${refs ? refs : '' }` } className="
                   p-2 px-4 border rounded-md poppins-400 anchor-nav border-gray-500 text-gray-500 
                 ">{ ` ${location ? location : "Home"} ` }</a>
               </div>
