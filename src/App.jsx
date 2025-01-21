@@ -88,7 +88,7 @@ const App = () => {
             {/* PARAF */}
               <br />
               <div className="button">
-                <a href="#About" className="py-3 px-6 animation-button rounded-xl montserrat-400">See More About Us</a>
+                <a href="#About" className="py-3 px-6 animation-button rounded-xl montserrat-400">See More What Is This</a>
               </div>
             </div>
           </div>
@@ -96,7 +96,7 @@ const App = () => {
       </div>
     {/* POST CONTENT */}
       <div 
-        className="w-full h-screen bg-[#2b2b2b] flex flex-col justify-center items-center"
+        className="w-full h-auto py-10 lg:h-screen bg-[#2b2b2b] flex flex-row flex-wrap justify-center items-center overflow-hidden"
         id="About"
         ref={(e) => (sectionRefs.current['about'] = e)}
       >
@@ -109,9 +109,22 @@ const App = () => {
             <p className="text-md mt-2 text-gray-300 oswald-400">The Broadcasting and Film Production program at SMK Negeri 5 Bandung offers an in-depth curriculum and immersive practical training in the specialized fields of cinematography, professional photography, and multimedia content creation. This program is meticulously designed for students who are deeply passionate about visual storytelling and aspire to craft compelling and impactful content tailored for diverse media platforms, including film, television, online streaming, and social media</p>
           </div>
         </div>
+        <div className="h-[1px] w-[80%] bg-gray-400 my-2" ></div>
         <br />
-        <div className="wrap-img w-[80%]">
-          <img src="https://placehold.co/1920x1080" width={'40%'} alt="" />
+        <div className="wrap-paraf-img w-[80%]">
+          <div className="coll w-full flex flex-col lg:flex-row">
+            <div className="paraf w-full ">
+              <h3 className="playfair-400 text-xl text-white">Skills Developed</h3>
+              <p className="text-md mt-2 px-2 text-gray-300 oswald-400">
+                Mastering the art of visual storytelling involves a comprehensive skill set, including expertise in professional video editing software to produce high-quality narratives. With a strong focus on cinematography, students learn advanced camera techniques and the use of cutting-edge equipment to capture stunning visuals. 
+                This holistic approach encompasses the entire production cycle, from pre-production planning and scriptwriting to meticulous post-production editing and publishing.
+              </p>
+              <p className="text-md mt-2 p-2 text-gray-300 oswald-400">The journey extends to hands-on experience in creating diverse film projects such as short films, documentaries, and other visual media, covering every step from concept development to final production. Additionally, proficiency in studio photography is developed, focusing on the use of lighting and cameras to achieve professional-grade results.</p>
+            </div>
+             <div className="w-full flex justify-center">
+              <img src="https://placehold.co/1920x1080" className="my-10 w-[500px]" alt="err" />
+             </div>
+          </div>
         </div>
       </div>
     {/* Aditional CONTENT */}
