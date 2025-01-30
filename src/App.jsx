@@ -1,10 +1,18 @@
 import { useRef, useState, useEffect } from "react"
+import feather from "feather-icons"
 
 import "./conf.css"
 
 import Navi from "./components/navi"
 
+const Icons = ({src}) => {
+  return (
+    <i data-feather={src}></i>
+  )
+}
+
 const App = () => {
+  feather.replace()
 
   const profil = {
     'assets': {
@@ -25,7 +33,7 @@ const App = () => {
       case 'Home' :
         return 'profiles-1'
       case 'Profiles' :
-        return 'profiles-2'
+        return 'prod-house'
       case 'Production House' : 
         return null
       s}
@@ -48,7 +56,7 @@ const App = () => {
 
   return (
     <>
-    <div className="HOME">
+    <div className="HOME selection:bg-fuchsia-300 selection:text-fuchsia-900">
     {/* NAVIGATION BAR */}
     <Navi location={userListen} hrefRef={href}>
 
@@ -100,7 +108,7 @@ const App = () => {
             {/* PARAF */}
               <br />
               <div className="button">
-                <a href="#About" className="py-3 px-6 animation-button rounded-xl montserrat-400">See More What Is This</a>
+                <a href="#profiles-1" className="py-3 px-6 animation-button rounded-xl montserrat-400">See More What Is This</a>
               </div>
             </div>
           </div>
@@ -108,21 +116,29 @@ const App = () => {
       </div>
     {/* POST CONTENT */}
       <div 
-        className="w-full h-auto py-10 lg:h-screen bg-[#2b2b2b] flex flex-row flex-wrap justify-center items-center overflow-hidden"
+        className="w-full h-screen py-5 bg-[#2b2b2b] flex flex-row flex-wrap justify-center items-center overflow-hidden"
         id="profiles-1"
         role="Profiles"
         ref={(e) => (sectionRefs.current['profiles-1'] = e)}
       >
         {/* paragraph */}
-        <div className="wrap-paraf w-[80%]">
+        <div className="wrap-paraf w-[70%] ">
           <div className="title">
             <h2 className="playfair-400 text-white text-2xl ">What is broadcasting and film production?</h2>
           </div>
           <div className="paraf px-2">
             <p className="text-md mt-2 text-gray-300 oswald-400">The Broadcasting and Film Production program at <a className="underline text-gray-100" target="_blank" href="https://smkn5bandung.sch.id/">SMK Negeri 5 Bandung</a> offers an in-depth curriculum and immersive practical training in the specialized fields of cinematography, professional photography, and multimedia content creation. This program is meticulously designed for students who are deeply passionate about visual storytelling and aspire to craft compelling and impactful content tailored for diverse media platforms, including film, television, online streaming, and social media</p>
+            <div className="w-full flex justify-end">
+              <a href="#profile-2" className="text-gray-400 oswald-400 text-xl m-4 transition-all flex items-center hover:text-white ease-out duration-300 ">Check out our skills <Icons src='arrow-down'></Icons></a>
+              
+            </div>
           </div>
         </div>
-        <div className="h-[1px] w-[80%] bg-gray-400 my-2" ></div> {/* Href */}
+        
+      </div>
+      {/* additional content about */}
+      <div className="bg-[#2b2b2b] flex flex-col justify-center items-center overflow-hidden h-auto w-full" id="profile-2">
+      <div className="h-[1px] w-[80%] bg-gray-400 my-2" ></div> {/* Href */}
         <br />
         <div className="wrap-paraf-img w-[80%]">
           <div className="coll w-full flex flex-col lg:flex-row">
@@ -147,12 +163,19 @@ const App = () => {
              </div>
           </div>
         </div>
-        <div className="h-[1px] w-[80%] mt-5 bg-gray-400 my-2" ></div> {/* Href */}
+      <div className="h-[1px] w-[80%] mt-5 bg-gray-400 my-2" ></div> {/* Href */}
+        <div className="h-auto w-[80%]">
+          <h3 className="playfair-400 text-white text-2xl">Equipment And Software That We Use</h3>
+          <div className="text-md mt-2 px-7 list-decimal text-gray-300 oswald-400">
+                <p>1. <span className="text-white">Cameras: DSLR and Mirrorless Cameras: </span>Students learn to operate advanced DSLR and mirrorless cameras, mastering settings like aperture, shutter speed, ISO, and white balance. These cameras are used for capturing high-resolution photos and videos, providing flexibility for different shooting conditions. Students also practice using interchangeable lenses, including wide-angle, telephoto, and prime lenses, to achieve various creative effects in their projects.</p> 
+                <p className="my-2">2. <span className="text-white">Lighting Equipment: Studio Lighting Setups: </span>With professional studio lighting setups, students explore techniques for creating mood and enhancing visual quality. They work with tools like softboxes, ring lights, LED panels, and reflectors to understand how light direction, intensity, and color temperature affect the final image. Practical sessions involve configuring three-point lighting systems for interviews, product shoots, and cinematic scenes.</p>
+          </div>
+        </div>
       </div>
     {/* Aditional CONTENT */}
       <div 
         className="w-full h-screen flex justify-center align-center"
-        id="profiles-2"
+        id="prod-house"
         role="Production House"
         ref={(e) => (sectionRefs.current["social"] = e)}>
       </div>
